@@ -1,1 +1,32 @@
+provider "aws"{
+region= "ap-south-1"
+access_keys= ""
+secret_key= ""
+}
+
+resource "aws_instance" "K8s-node"{
+ami= "ami-0hvky86fee467h7d43f8"
+instance_type= "t2.medium"
+key_name= "My-pem"
+tags= {
+Name= "K8s-node"
+}
+}resource "aws_instance" "CI-master"{
+ami= "ami-0hvky86fee467h7d43f8"
+instance_type= "t2.medium"
+key_name= "My-pem"
+tags= {
+Name= "CI-master"
+}
+}
+resource "aws_instance" "CI-agent"{
+ami= "ami-0hvky86fee467h7d43f8"
+instance_type= "t2.medium"
+key_name= "My-pem"
+tags= {
+Name= "CI-agent"
+}
+}
+
+
 
