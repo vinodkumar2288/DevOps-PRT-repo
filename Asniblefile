@@ -1,1 +1,13 @@
-
+---
+- name: Installation on CI master
+hosts: localhost
+become: true
+tasks:
+- name: Executing script
+  script: jenkins.sh
+- name: Installation on ci-agent
+  hosts: test
+  bocome: true
+  tasks:
+  - name: Executing script
+    script: docker.sh
